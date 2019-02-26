@@ -5,11 +5,10 @@ import Content from '../Content/content'
 // This file holds the state of the entire file
 
 
-
-// console.log(this.items)
+const items={items}
+console.log(items)
 
 class Parent extends Component {
-  
   render() {
     return (
         <div id='wrapper'>

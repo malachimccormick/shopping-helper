@@ -18,9 +18,7 @@ constructor(props) {
             console.log(response);
             items = response.data
             console.log(items)
-       this.setState({
-       item: items
-       })
+       
        })
        .catch(function (error) {
          console.log(error);
@@ -29,7 +27,7 @@ constructor(props) {
   render() {
     return (
       
-  <Parent  />
+  <Parent  items={items}/>
     );
   }
 }
