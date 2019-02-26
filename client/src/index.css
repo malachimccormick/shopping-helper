@@ -1,0 +1,125 @@
+@import url('https://fonts.googleapis.com/css?family=Montserrat');
+
+#banner {
+  position: relative;
+  background-color: rgb(72, 197, 93);
+  margin-top: 0;
+  height: 150px;
+  line-height: 150px;
+  opacity: .65;
+  z-index: 1;
+}
+
+h1#ontop {
+  z-index: 2;
+  font-family: 'Alegreya Sans', sans-serif;
+  color: white;
+  margin: 10px;
+  margin-top: 50px;
+  position: absolute;
+  font-weight: bolder
+}
+
+.bar {
+  font-size: 11pt;
+  z-index: 2;
+  margin: 5px;
+  padding: 5px;
+  top: 0;
+  border: black solid 2px;
+  background-color: rgb(152, 184, 157);
+
+}
+
+#bannerbar {
+  position: relative;
+  margin-top: -50px;
+  float: right;
+  display: flex;
+  flex-direction: row;
+  justify-content: baseline;
+}
+
+#list {
+  color: white;
+}
+
+html,
+body {
+  background-attachment: fixed;
+  width: 100;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  background-image: url('./raghu-nayyar-459422-unsplash.jpg');
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 1500px;
+}
+
+#wrapper {
+  margin-top: 40px;
+  height: 763px;
+  width: 80%;
+  box-shadow: 12px 0 15px -4px rgb(152, 184, 157),
+    -12px 0 8px -4px rgb(152, 184, 157);
+}
+
+.form {
+  display: flex;
+  /* display: none; */
+  justify-content: center;
+  padding: 10px;
+  height: 90px;
+  margin-left: 10px;
+  float: right;
+  position: absolute;
+  margin-top: 50%;
+  margin-left: 40%;
+}
+
+#content-list {
+  margin-left: 20px;
+}
+
+#form-component {
+  background-color: rgb(152, 184, 157);
+
+}
+
+#root {
+  display: flex;
+  justify-content: center;
+}
+
+#content-h1 {
+  color: white;
+  margin-left: 15px;
+}
+
+.content-li {
+  color: white;
+}
+
+#content-holder {
+  z-index: 1;
+  background-color: rgb(152, 184, 157);
+  height: 615px;
+  opacity: .7;
+  box-shadow: 12px 0 15px -4px rgb(152, 184, 157),
+    -12px 0 8px -4px rgb(152, 184, 157);
+}
+
+#content-list {
+  z-index: 2;
+  opacity: .8;
+  position: relative;
+  margin-top: -580px;
+  height: 500px;
+  width: 96%;
+  background-color: black
+}
+
+li {
+  color: white;
+}
