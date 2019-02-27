@@ -51,6 +51,21 @@ app.get('/groceries', (req, res) => {
         // res.render('index.html')
     })
 })
+app.post('/groceries/add', (req, res) => {
+    db.collection('grocery').insertOne(req.body, (err, results) => {
+        if (err) return console.log(err)
+        console.log('saved to database')
+        res.redirect('/')
+    })
+})
+
+
+
+
+
+
+
+
  function error(err) {
      if (err) return console.log(err)
  }
@@ -65,3 +80,25 @@ app.get('/groceries', (req, res) => {
 
 
 module.exports = app;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+//  "scripts": {
+//    "start": "node bin/www",
+//    "dev": "concurrently \"nodemon bin/www\" \"cd ./client  && npm start \" ",
+//    "test": "echo \"Error: no test specified\" && exit 1"
+//  }
