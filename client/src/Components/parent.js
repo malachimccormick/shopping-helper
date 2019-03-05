@@ -17,7 +17,7 @@ class Parent extends Component {
               <div >
                 <button  id='login'to=''href=''>Login</button>
                 <button  id='groceryList'to=''href=''>Grocery List</button>
-                <Link to={newItem} ><button  id='newList' >New List</button></Link>
+                <Link to={newItem} ><button  id='newList' >Add Item</button></Link>
               </div>
               
               

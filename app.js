@@ -8,6 +8,7 @@ const bodyParser = require('body-parser');
 var cors = require('cors')
 var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
+const ObjectId = require('mongodb').ObjectID
 
 var app = express();
 
@@ -58,6 +59,17 @@ app.post('/groceries/add', (req, res) => {
         res.redirect('/')
     })
 })
+
+app.post('/groceries/delete', (req, res) => {
+    let id =req.body.id
+    console.log(id)
+        db.collection('grocery').deleteOne({_id:ObjectId(id)}, (err, result) => {
+            console.log('deleted from database')
+            res.redirect('/')
+            
+            error(err)
+    })
+})       
 
 
 

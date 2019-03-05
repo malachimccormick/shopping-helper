@@ -40,12 +40,25 @@ addNewItemList = (newItem) => {
   })
 }
 
+deleteItemList = (deletedItem) => {
+  console.log(deletedItem)
+  
+  axios.post(`/groceries/delete`,{id:deletedItem})
+    .then((res) => {
+     this.setState({items:res.data})
+      
+      
+    
+      })
+    }
+  
+
 render() {
 
 
   const ContentPage= (props) =>{
     return(
-      <Content items={this.state.items}/>
+      <Content items={this.state.items} deleteItemList={this.deleteItemList} getItems={this.getItems}/>
     )
   }
 
@@ -55,6 +68,11 @@ render() {
       <Form addNewItemList={this.addNewItemList} />
     )
   }
+    const DeletePage= (props) =>{
+    return(
+      <Form deleteItemList={this.deleteItemList} />
+    )
+  }
 
     return (
       <Router>
@@ -62,8 +80,9 @@ render() {
           <Parent />
         <Switch>
           
-    <Route exact path= '/' render={ContentPage} /> 
+    <Route exact path= '/'  render={ContentPage} /> 
     <Route exact path='/newItem' render={FormPage}/>
+    <Route exact path='/groceries/delete' render={DeletePage}/>
           </Switch>
       </div>
       </Router>

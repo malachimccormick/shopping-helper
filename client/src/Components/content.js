@@ -1,13 +1,43 @@
 import React, { Component } from 'react';
+import axios from 'axios'
 
 // import axios from 'axios'
 // let items
 class Content extends Component {
-   
-  render() {
-      const list= this.props.items.map((items,index)=>{
+     state={
+      items:[]
+    }
+
+componentDidMount(){
+    this.getItem()
+}
+       
+getItem= itId =>{
+    
+    axios.get('/groceries')
+        .then((res)=>{
+            this.setState({items: res.data})
+                console.log(this.state)
+                    })
+
+                .catch(function (error) {
+            console.log(error);
+        });
+
+}
+        deleteItem= deleteItemList =>{
+            this.props.deleteItemList(deleteItemList)
+                this.getItem()
+            console.log(deleteItemList)
+        }
+        
+    render() {
+        const list= this.state.items.map((items,index)=>{
+            
+         
+              
       return(
-        <div key={index}>
+        <div key={items._id}>
 
         
             <div>
@@ -15,7 +45,7 @@ class Content extends Component {
                 <ul>
                      {/* { this.state.items.map(items => <li className = 'content-li'>{[0].item}</li>)} */}
                     < li  >
-                        {items.item} cost ${items.value}
+                        {items.item} cost ${items.value} <button onClick={()=>this.deleteItem(`${items._id}`)}><small>x</small></button>
                     </li>
                     
                 </ul>
@@ -24,7 +54,6 @@ class Content extends Component {
            
       )
       })
-      console.log(this.props.items)
     return (
         <div >
             < h1 > My List </h1>
@@ -38,17 +67,3 @@ class Content extends Component {
 export default Content;
 
 
-
-// fetch('http://localhost:3001/groceries', {
-//     method: 'POST',
-//     body: data
-//   }).then(response => {
-//       response.json()})
-// axios.get('http://localhost:3001/groceries')
-// .then(function (response) {
-//   console.log(response);
-
-// })
-// .catch(function (error) {
-//   console.log(error);
-// });
